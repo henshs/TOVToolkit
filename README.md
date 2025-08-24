@@ -46,7 +46,7 @@ Example: `./eos_tables/eos_sly4.lorene`
 3. Run the script:
 
    ```bash
-   python tov_solver.py
+   python tovtoolkit.py
    ```
 4. The script will:
 

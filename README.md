@@ -73,6 +73,10 @@ Tolman, R.C. (1939). "Static Solutions of Einstein's Field Equations for Spheres
 
 Oppenheimer, J.R., Volkoff, G.M. (1939). "On Massive Neutron Cores". *Physical Review*, 55(4), 374–381. [DOI:10.1103/PhysRev.55.374](https://doi.org/10.1103/PhysRev.55.374)
 
+## Acknowledgments
+- This project uses open-source Python libraries: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), and [Matplotlib](https://matplotlib.org/).
+- Special thanks to the open-source community for developing and maintaining these tools.
+
 ## License
 
 This project is open-source. You are free to use, modify, and distribute it with attribution.

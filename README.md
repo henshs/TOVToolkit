@@ -35,7 +35,7 @@ The EoS file should be a plain text table with at least four columns. The script
 * Column 3: Pressure (dyn/cm²)
 * Comments in the file should start with `#` (ignored).
 * Adjust your table or the script as per your need.
-* There are a bunch of EoS tables in LORENE format.
+* There are a bunch of EoS tables in LORENE format like DD2, SFH0, LS220, SLy4.
 
 Example: `./eos_tables/eos_sly4.lorene`
 
@@ -64,6 +64,11 @@ Example: `./eos_tables/eos_sly4.lorene`
 * Adjust `min_pressure`, `max_pressure`, and `max_radius` in the script to explore different mass-radius ranges.
 * The script uses monotonic PCHIP interpolation to avoid spurious oscillations in the density-pressure relation.
 * Metric breakdown or negative densities trigger early termination.
+
+## Disclaimer
+
+- The EoS tables included are sourced from various repositories. Please ensure their consistency and suitability before using them for any scientific or publication purposes.  
+- The TOV solver has been tested for accuracy, but if you encounter any issues or unexpected behavior, please contact me at **sudiptahensh2009@gmail.com**.
 
 ## References
 

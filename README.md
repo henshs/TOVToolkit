@@ -34,8 +34,9 @@ The EoS file should be a plain text table with at least four columns. The script
 * Column 2: Mass density (g/cm³)
 * Column 3: Pressure (dyn/cm²)
 * Comments in the file should start with `#` (ignored).
+* Adjust your table or the script as per your need.
 
-Example: `./eos_tables/QHC21D.lorene`
+Example: `./eos_tables/eos_sly4.lorene`
 
 ## How to Run
 
@@ -57,6 +58,12 @@ Example: `./eos_tables/QHC21D.lorene`
 * **Text file**: Contains central pressure, radius, and mass for each integration.
 * **Plot**: Displays the neutron star mass-radius relation.
 
+## Notes
+
+* Adjust `min_pressure`, `max_pressure`, and `max_radius` in the script to explore different mass-radius ranges.
+* The script uses monotonic PCHIP interpolation to avoid spurious oscillations in the density-pressure relation.
+* Metric breakdown or negative densities trigger early termination.
+
 ## References
 
 The script integrates the standard TOV equations:
@@ -64,12 +71,6 @@ The script integrates the standard TOV equations:
 Tolman, R.C. (1939). "Static Solutions of Einstein's Field Equations for Spheres of Fluid". *Physical Review*, 55(4), 364–373. [DOI:10.1103/PhysRev.55.364](https://doi.org/10.1103/PhysRev.55.364)
 
 Oppenheimer, J.R., Volkoff, G.M. (1939). "On Massive Neutron Cores". *Physical Review*, 55(4), 374–381. [DOI:10.1103/PhysRev.55.374](https://doi.org/10.1103/PhysRev.55.374)
-
-## Notes
-
-* Adjust `min_pressure`, `max_pressure`, and `max_radius` in the script to explore different mass-radius ranges.
-* The script uses monotonic PCHIP interpolation to avoid spurious oscillations in the density-pressure relation.
-* Metric breakdown or negative densities trigger early termination.
 
 ## License
 

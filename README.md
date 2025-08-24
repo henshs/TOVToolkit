@@ -8,7 +8,7 @@ This repository contains a Python script to solve the Tolman-Oppenheimer-Volkoff
 * Solves TOV equations for a given tabulated EoS in CGS units.
 * Uses adaptive numerical integration with SciPy's `solve_ivp`.
 * Supports high-precision integration for high central pressures.
-* Reads EoS tables (compatible with LORENE/QHC21D-like formats).
+* Reads EoS tables (compatible with LORENE-like formats, easy to adapt if format is not the same).
 * Saves M-R relation to an output text file.
 * Plots the mass-radius curve and highlights the maximum mass.
 
@@ -35,6 +35,7 @@ The EoS file should be a plain text table with at least four columns. The script
 * Column 3: Pressure (dyn/cm²)
 * Comments in the file should start with `#` (ignored).
 * Adjust your table or the script as per your need.
+* There are a bunch of EoS tables in LORENE format.
 
 Example: `./eos_tables/eos_sly4.lorene`
 

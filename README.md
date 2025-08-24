@@ -8,7 +8,7 @@ This repository contains a Python script to solve the Tolman-Oppenheimer-Volkoff
 * Solves TOV equations for a given tabulated EoS in CGS units.
 * Uses adaptive numerical integration with SciPy's `solve_ivp`.
 * Supports high-precision integration for high central pressures.
-* Reads EoS tables (compatible with LORENE/QHC21D-like formats).
+* Reads EoS tables (compatible with LORENE-like formats, easy to adapt if format is not the same).
 * Saves M-R relation to an output text file.
 * Plots the mass-radius curve and highlights the maximum mass.
 
@@ -34,8 +34,10 @@ The EoS file should be a plain text table with at least four columns. The script
 * Column 2: Mass density (g/cm³)
 * Column 3: Pressure (dyn/cm²)
 * Comments in the file should start with `#` (ignored).
+* Adjust your table or the script as per your need.
+* There are a bunch of EoS tables in LORENE format like DD2, SFH0, LS220, SLy4.
 
-Example: `./eos_tables/QHC21D.lorene`
+Example: `./eos_tables/eos_sly4.lorene`
 
 ## How to Run
 
@@ -44,7 +46,7 @@ Example: `./eos_tables/QHC21D.lorene`
 3. Run the script:
 
    ```bash
-   python tov_solver.py
+   python tovtoolkit.py
    ```
 4. The script will:
 
@@ -57,6 +59,17 @@ Example: `./eos_tables/QHC21D.lorene`
 * **Text file**: Contains central pressure, radius, and mass for each integration.
 * **Plot**: Displays the neutron star mass-radius relation.
 
+## Notes
+
+* Adjust `min_pressure`, `max_pressure`, and `max_radius` in the script to explore different mass-radius ranges.
+* The script uses monotonic PCHIP interpolation to avoid spurious oscillations in the density-pressure relation.
+* Metric breakdown or negative densities trigger early termination.
+
+## Disclaimer
+
+- The EoS tables included are sourced from various repositories. Please ensure their consistency and suitability before using them for any scientific or publication purposes.  
+- The TOV solver has been tested for accuracy, but if you encounter any issues or unexpected behavior, please contact me at **sudiptahensh2009@gmail.com**.
+
 ## References
 
 The script integrates the standard TOV equations:
@@ -65,11 +78,9 @@ Tolman, R.C. (1939). "Static Solutions of Einstein's Field Equations for Spheres
 
 Oppenheimer, J.R., Volkoff, G.M. (1939). "On Massive Neutron Cores". *Physical Review*, 55(4), 374–381. [DOI:10.1103/PhysRev.55.374](https://doi.org/10.1103/PhysRev.55.374)
 
-## Notes
-
-* Adjust `min_pressure`, `max_pressure`, and `max_radius` in the script to explore different mass-radius ranges.
-* The script uses monotonic PCHIP interpolation to avoid spurious oscillations in the density-pressure relation.
-* Metric breakdown or negative densities trigger early termination.
+## Acknowledgments
+- This project uses open-source Python libraries: [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), and [Matplotlib](https://matplotlib.org/).
+- Special thanks to the open-source community for developing and maintaining these tools.
 
 ## License
 
